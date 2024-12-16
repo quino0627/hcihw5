@@ -7,8 +7,17 @@ import ReservationList from "@/components/reservation/ReservationList";
 import { useEffect, useState } from "react";
 import type { Reservation } from "@/types/reservation";
 
+interface Vehicle {
+  id: string;
+  model: string;
+  manufacturer: string;
+  location: string;
+  image_url?: string;
+  category: string;
+}
+
 export default function Home() {
-  const [vehicles, setVehicles] = useState([]);
+  const [vehicles, setVehicles] = useState<Vehicle[]>([]);
   const [reservations, setReservations] = useState<Reservation[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
